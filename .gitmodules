@@ -1,0 +1,3 @@
+[submodule "ansible-bundler"]
+	path = ansible-bundler
+	url = ssh://aur@aur.archlinux.org/ansible-bundler.git
