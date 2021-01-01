@@ -1,0 +1,18 @@
+pkgbase = devops-tools-git
+	pkgdesc = A set of tools for working with server automation.
+	pkgver = 1.2.0.r0.gcb3766e
+	pkgrel = 1
+	url = https://github.com/kriansa/devops-tools
+	arch = any
+	license = custom:BSD
+	depends = netcat
+	depends = aws-cli
+	depends = terraform
+	depends = ansible
+	provides = devops-tools
+	conflicts = devops-tools
+	source = git://github.com/kriansa/devops-tools
+	sha256sums = SKIP
+
+pkgname = devops-tools-git
+

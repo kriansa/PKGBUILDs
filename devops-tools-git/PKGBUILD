@@ -1,0 +1,29 @@
+# Maintainer: Daniel Pereira <daniel@garajau.com.br>
+
+_pkgname=devops-tools
+pkgname=devops-tools-git
+pkgver=1.2.0.r0.gcb3766e
+pkgrel=1
+pkgdesc="A set of tools for working with server automation."
+url="https://github.com/kriansa/devops-tools"
+arch=(any)
+license=(custom:BSD)
+depends=(netcat aws-cli terraform ansible)
+provides=(devops-tools)
+conflicts=(devops-tools)
+source=(git://github.com/kriansa/devops-tools)
+sha256sums=(SKIP)
+
+pkgver() {
+  cd devops-tools || exit 1
+  git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+  # Get into the cloned source git repository
+  cd devops-tools || exit 1
+
+  install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
+  install -d -m755 "$pkgdir/usr/bin/"
+  cp -r deploy-tools/* "$pkgdir/usr/bin"
+}

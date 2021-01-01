@@ -1,0 +1,21 @@
+# Maintainer: Daniel Pereira <daniel@garajau.com.br>
+
+pkgname=ttf-nerd-glyphs
+pkgver=2.0.0
+pkgrel=2
+pkgdesc='Patched font with all glyphs present on NerdFonts'
+arch=('any')
+url='https://nerdfonts.com/'
+license=('MIT')
+depends=('fontconfig' 'xorg-fonts-encodings' 'xorg-font-utils')
+conflicts=('ttf-nerd-fonts-symbols')
+source=("Symbols-2048-NerdFontComplete.ttf::https://github.com/ryanoasis/nerd-fonts/raw/b9c842d4d6e1fc9092f8d41445ddc26d7128ecb0/src/glyphs/Symbols-2048-em%20Nerd%20Font%20Complete.ttf"
+        "LICENSE")
+sha256sums=('5699e72fdd41ab97bc1e786ef6c0a8b2418e883880c56103bee88a441db71e1d'
+            'd2a29823384e9194a87936ccad495c764c2ef733b29bfa6f72a1d65803ce02e5')
+
+package() {
+  install -dm 755 "${pkgdir}/usr/share/fonts/TTF"
+  install -m 644 Symbols-2048-NerdFontComplete.ttf "${pkgdir}/usr/share/fonts/TTF/Symbols-2048-NerdFontComplete.ttf"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
+}

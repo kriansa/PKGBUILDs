@@ -1,0 +1,26 @@
+# Maintainer: Daniel Pereira <daniel@garajau.com.br>
+# shellcheck disable=2034,2154
+
+pkgname=gnome-shell-extension-remove-accessibility
+pkgver=1.0.0.d88c987
+pkgrel=1
+pkgdesc="Gnome Shell extension to remove the Accessibility button"
+arch=('any')
+url="https://github.com/lomegor/Remove-Accessibility.git"
+license=('GPL3')
+depends=('gnome-shell>=3.10')
+makedepends=('git')
+commit=d88c9872e2cdc5044e203cb3d08c6781c52091d9
+source=("https://github.com/lomegor/Remove-Accessibility/archive/${commit}.tar.gz")
+sha256sums=('42a439f59bf6e69b1b6cf65965404cec45fe4249d336b10b8dc6f8fe36b7ecac')
+
+package() {
+  cd "$srcdir/Remove-Accessibility-${commit}" || exit 1
+
+  # Create the directory
+  install -d "$pkgdir/usr/share/gnome-shell/extensions/removeaccesibility@lomegor"
+
+  # Install the extension
+  install -Dm644 extension.js "$pkgdir/usr/share/gnome-shell/extensions/removeaccesibility@lomegor"
+  install -Dm644 metadata.json "$pkgdir/usr/share/gnome-shell/extensions/removeaccesibility@lomegor"
+}
