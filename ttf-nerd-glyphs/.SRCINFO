@@ -1,7 +1,7 @@
 pkgbase = ttf-nerd-glyphs
 	pkgdesc = Patched font with all glyphs present on NerdFonts
-	pkgver = 2.0.0
-	pkgrel = 2
+	pkgver = 2.0.1
+	pkgrel = 1
 	url = https://nerdfonts.com/
 	arch = any
 	license = MIT
@@ -9,9 +9,9 @@ pkgbase = ttf-nerd-glyphs
 	depends = xorg-fonts-encodings
 	depends = xorg-font-utils
 	conflicts = ttf-nerd-fonts-symbols
-	source = Symbols-2048-NerdFontComplete.ttf::https://github.com/ryanoasis/nerd-fonts/raw/b9c842d4d6e1fc9092f8d41445ddc26d7128ecb0/src/glyphs/Symbols-2048-em%20Nerd%20Font%20Complete.ttf
+	source = Symbols-2048-NerdFontComplete-2.0.1.ttf::https://github.com/ryanoasis/nerd-fonts/raw/59c45ba4eff539d2a83a7d7004f056b9860d3253/src/glyphs/Symbols-2048-em%20Nerd%20Font%20Complete.ttf
 	source = LICENSE
-	sha256sums = 5699e72fdd41ab97bc1e786ef6c0a8b2418e883880c56103bee88a441db71e1d
+	sha256sums = df6be58f7707c0e8c9bc3aa230fc98fe8fa78cfba1cad43321e59281eca49600
 	sha256sums = d2a29823384e9194a87936ccad495c764c2ef733b29bfa6f72a1d65803ce02e5
 
 pkgname = ttf-nerd-glyphs
