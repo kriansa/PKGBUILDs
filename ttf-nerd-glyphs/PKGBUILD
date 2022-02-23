@@ -2,12 +2,13 @@
 
 pkgname=ttf-nerd-glyphs
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Patched font with all glyphs present on NerdFonts'
 arch=('any')
 url='https://nerdfonts.com/'
 license=('MIT')
 depends=('fontconfig' 'xorg-fonts-encodings')
+provides=('ttf-font-nerd')
 conflicts=('ttf-nerd-fonts-symbols')
 source=("Symbols-2048-NerdFontComplete-${pkgver}.ttf::https://github.com/ryanoasis/nerd-fonts/raw/59c45ba4eff539d2a83a7d7004f056b9860d3253/src/glyphs/Symbols-2048-em%20Nerd%20Font%20Complete.ttf"
         "LICENSE")
