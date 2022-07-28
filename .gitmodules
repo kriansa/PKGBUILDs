@@ -4,3 +4,6 @@
 [submodule "pacom"]
 	path = pacom
 	url = ssh://aur@aur.archlinux.org/pacom.git
+[submodule "wmcompanion"]
+	path = wmcompanion
+	url = ssh://aur@aur.archlinux.org/wmcompanion.git
