@@ -1,0 +1,31 @@
+# Maintainer: Daniel Pereira <daniel@garajau.com.br>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Johannes Wienke <languitar@semipol.de>
+
+pkgname=xsecurelock-auth-u2f
+pkgver=1.7.0+u2f1
+pkgrel=1
+pkgdesc="Auth module for XSecureLock with better support to U2F"
+arch=('x86_64')
+url="https://github.com/google/xsecurelock"
+license=('APACHE')
+depends=('libxcomposite' 'libxmu' 'libxft' 'libxrandr' 'libxss')
+source=("$pkgname.tar.gz::https://github.com/kriansa/xsecurelock/tarball/feat/proto-timeout")
+sha256sums=('af8c43150410de5ae7dd874df4b411cda4a68185bd820fd5a2a1e25c90d220dc')
+
+build() {
+  cd kriansa-xsecurelock-* || exit 1
+  sh autogen.sh
+  ./configure --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --with-pam-service-name=system-auth
+  make GIT_VERSION="v${pkgver}"
+}
+
+package() {
+  cd kriansa-xsecurelock-* || exit 1
+
+  install -d -m755 "$pkgdir/usr/lib/xsecurelock/"
+  install -Dm755 auth_x11 "$pkgdir/usr/lib/xsecurelock/auth_u2f_x11"
+}
