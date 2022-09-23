@@ -11,6 +11,6 @@ pkgbase = xsecurelock-auth-u2f
 	depends = libxrandr
 	depends = libxss
 	source = xsecurelock-auth-u2f.tar.gz::https://github.com/kriansa/xsecurelock/tarball/feat/proto-timeout
-	sha256sums = af8c43150410de5ae7dd874df4b411cda4a68185bd820fd5a2a1e25c90d220dc
+	sha256sums = ebdc06c0510ee23e820621f5c477546151ad690b9d553eb2dc44e95143842c6c
 
 pkgname = xsecurelock-auth-u2f
